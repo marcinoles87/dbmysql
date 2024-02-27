@@ -10,18 +10,23 @@ function App() {
 
   useEffect( () => {
     axios.get('http://localhost:8081')
-    .then( res => console.log(res.data))
-    .then( (data) => {
-      setData(data)
-    })
+    .then( res => setData(res.data))
+    
+    
     .catch( err => console.log(err))
   },[])
 
-  console.log(data[0])
+ 
 
   return (
     <div className="App">
-     
+     {data.map( (item) =>{
+      return(
+        <>
+        <p>{item.Nazwa}</p>
+        </>
+      )
+     })}
     </div>
   );
 }
