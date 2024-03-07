@@ -10,6 +10,7 @@ function App() {
 
   useEffect( () => {
     axios.get('http://localhost:8081')
+    
     .then( res => setData(res.data))
     
     
@@ -17,14 +18,18 @@ function App() {
   },[])
 
  
+  console.log(data)
 
   return (
     <div className="App">
-     {data.map( (item) =>{
+      <h1>Dane pobrane z bazy danych  MYSQL </h1>
+     {data.map( (item , index) =>{
       return(
-        <>
-        <p>{item.Nazwa}</p>
-        </>
+        <div key={index} className='item-container'>
+            <h1>{item.Nazwa}</h1>
+            <p>{item.Data}</p>
+            <p>{item.Opis}</p>
+        </div>
       )
      })}
     </div>
