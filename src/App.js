@@ -20,15 +20,24 @@ function App() {
  
   console.log(data)
 
+  const handleDelete = () => {
+    
+    const index = document.querySelector('.item-container')
+    console.log(index)
+   
+  }
+
   return (
     <div className="App">
       <h1>Dane pobrane z bazy danych  MYSQL </h1>
      {data.map( (item , index) =>{
+      
       return(
         <div key={index} className='item-container'>
-            <h1>{item.Nazwa}</h1>
-            <p>{item.Data}</p>
-            <p>{item.Opis}</p>
+            <h1 className='item-name'>{item.Nazwa}</h1>
+            <p  className='item-date'>{item.Data}</p>
+            <p className='item-desc'>{item.Opis}</p>
+            <button onClick={handleDelete}>Delete</button>
         </div>
       )
      })}
