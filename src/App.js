@@ -22,10 +22,15 @@ function App() {
 
   const handleDelete = (id , e) => {
 
-    console.log(id)
-    console.log(e)
-    axios.delete(`http://localhost:8081`)
-    .then(res => console.log(res))
+    console.log(data)
+    
+    const newArray = data.filter((item) => item.Nazwa !== id)
+   
+
+   setData(newArray)
+
+
+    
     
     
     
