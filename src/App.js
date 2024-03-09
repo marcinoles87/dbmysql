@@ -20,11 +20,12 @@ function App() {
  
   console.log(data)
 
-  const handleDelete = () => {
+  const handleDelete = (e) => {
     
-    const index = document.querySelector('.item-container')
-    console.log(index)
-   
+    const client = axios.delete('http://localhost:8081')
+    
+    
+    
   }
 
   return (
