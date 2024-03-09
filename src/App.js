@@ -24,7 +24,8 @@ function App() {
 
     console.log(id)
     console.log(e)
-    
+    axios.delete(`http://localhost:8081`)
+    .then(res => console.log(res))
     
     
     
