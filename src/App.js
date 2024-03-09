@@ -20,9 +20,11 @@ function App() {
  
   console.log(data)
 
-  const handleDelete = (e) => {
+  const handleDelete = (id , e) => {
+
+    console.log(id)
+    console.log(e)
     
-    const client = axios.delete('http://localhost:8081')
     
     
     
@@ -38,7 +40,7 @@ function App() {
             <h1 className='item-name'>{item.Nazwa}</h1>
             <p  className='item-date'>{item.Data}</p>
             <p className='item-desc'>{item.Opis}</p>
-            <button onClick={handleDelete}>Delete</button>
+            <button onClick={(e) =>handleDelete(item.Nazwa , e)}>Delete</button>
         </div>
       )
      })}
