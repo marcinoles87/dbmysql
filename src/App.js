@@ -21,15 +21,18 @@ function App() {
   console.log(data)
 
   const handleDelete = (id , e) => {
+    e.preventDefault()
 
-    // axios.delete(`http://localhost:8081/wydarzenia/Nazwa=${id}`)
-
-    console.log(data)
-    
-    const newArray = data.filter((item) => item.Nazwa !== id)
+    axios.delete(`http://localhost:8081/wydarzenia/Nazwa`)
+    .then( res => console.log(res))
    
 
-   setData(newArray)
+    
+    
+    // const newArray = data.filter((item) => item.Nazwa !== id)
+   
+
+  //  setData(newArray)
 
 
     
