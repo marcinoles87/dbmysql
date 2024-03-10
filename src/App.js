@@ -22,6 +22,8 @@ function App() {
 
   const handleDelete = (id , e) => {
 
+    // axios.delete(`http://localhost:8081/wydarzenia/Nazwa=${id}`)
+
     console.log(data)
     
     const newArray = data.filter((item) => item.Nazwa !== id)
