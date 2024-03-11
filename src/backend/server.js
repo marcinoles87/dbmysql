@@ -15,14 +15,15 @@ const db = mysql.createConnection({
 })
 
 app.post("/" , (req , res) => {
-    const nazwa = req.body.Nazwa;
-    const data = req.body.Data;
-    const opis = req.body.Opis;
+    const sql = "INSERT INTO wydarzenia (Nazwa , Data , Opis ) VALUES ( ? , ? , ? )"
+    const Nazwa = req.body.Nazwa;
+    const Data = req.body.Data;
+    const Opis = req.body.Opis;
 
-    db.query(
-        "INSERT INTO wydarzenia (Nazwa , Data , Opis) VALUES { ? , ? , ? }",
-        [nazwa , data , opis] , 
+    db.query(sql ,
+        [Nazwa , Data , Opis] , 
         (err , result) => {
+            
             if(err) {
                 console.log('error')
             }else{

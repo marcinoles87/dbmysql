@@ -24,16 +24,16 @@ function App() {
  
   console.log(data)
 
-  const handleAdd = (id , e) => {
+  const handleAdd = () => {
 
-    e.preventDefault()
+
 
     // const newArray = data.filter((item) => item.Nazwa !== id)
     
     // setData(newArray)
 
 
-    axios.post('http://localhost:8081/wydarzenia' , 
+    axios.post('http://localhost:8081' , 
 
     {
       Nazwa : Nazwa ,
@@ -43,20 +43,21 @@ function App() {
     .then( () => {
       console.log('success')
     })
-
-    
-    
-    
-    
+  
     
   }
+
+
+  console.log(Nazwa)
+  console.log(Data)
+  console.log(Opis)
 
   return (
     <div className="App">
 
-      <input placeholder='name'></input>
-      <input placeholder='data'></input>
-      <input placeholder='opis'></input>
+      <input type='text' placeholder='name' onChange={ (e) => setNazwa(e.target.value)}></input>
+      <input type='date' placeholder='data' onChange={ (e) => setDate(e.target.value)}></input>
+      <input type='text' placeholder='opis' onChange={ (e) => setOpis(e.target.value)}></input>
       <h1>Dane pobrane z bazy danych  MYSQL </h1>
      {data.map( (item , index) =>{
       
