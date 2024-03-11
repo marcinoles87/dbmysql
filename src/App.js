@@ -66,7 +66,7 @@ function App() {
             <h1 className='item-name'>{item.Nazwa}</h1>
             <p  className='item-date'>{item.Data}</p>
             <p className='item-desc'>{item.Opis}</p>
-            <button onClick={(e) =>handleAdd(item.Nazwa , e)}>Delete</button>
+            <button onClick={handleAdd}>Delete</button>
         </div>
       )
      })}

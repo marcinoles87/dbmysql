@@ -20,15 +20,16 @@ app.post("/" , (req , res) => {
     const Data = req.body.Data;
     const Opis = req.body.Opis;
 
-    db.query(sql ,
-        [Nazwa , Data , Opis] , 
+    db.query(sql , [Nazwa , Data , Opis] , 
         (err , result) => {
-            
+            console.log(result)
             if(err) {
                 console.log('error')
             }else{
                 res.send('values insered')
             }
+
+            
 
 
         }
