@@ -33,7 +33,7 @@ function App() {
     // setData(newArray)
 
 
-    axios.post('http://localhost:8081/create' , 
+    axios.post('http://localhost:8081/wydarzenia' , 
 
     {
       Nazwa : Nazwa ,
@@ -53,6 +53,10 @@ function App() {
 
   return (
     <div className="App">
+
+      <input placeholder='name'></input>
+      <input placeholder='data'></input>
+      <input placeholder='opis'></input>
       <h1>Dane pobrane z bazy danych  MYSQL </h1>
      {data.map( (item , index) =>{
       

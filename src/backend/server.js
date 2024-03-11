@@ -14,13 +14,13 @@ const db = mysql.createConnection({
     database : "v55582726_viptour"
 })
 
-app.post("/create" , (req , res) => {
+app.post("/" , (req , res) => {
     const nazwa = req.body.Nazwa;
     const data = req.body.Data;
     const opis = req.body.Opis;
 
     db.query(
-        "INSERT INTO wydarzenia (nazwa , opis , data) VALUES {? , ? , ? }",
+        "INSERT INTO wydarzenia (Nazwa , Data , Opis) VALUES { ? , ? , ? }",
         [nazwa , data , opis] , 
         (err , result) => {
             if(err) {
@@ -45,14 +45,6 @@ app.get('/' , (req , res) => {
 
 
 
-app.put('/' , (req , res) => {
-    const sql = "SELECT * from wydarzenia"
-    db.query(sql , ( err , data) => {
-        if(err) return res.json(err);
-        return res.json(data)
-
-    })
-})
 
 
 app.listen(8081, () => {
