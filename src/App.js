@@ -26,6 +26,9 @@ function App() {
 
   const handleAdd = () => {
 
+     console.log(Nazwa)
+     
+
 
 
     // const newArray = data.filter((item) => item.Nazwa !== id)

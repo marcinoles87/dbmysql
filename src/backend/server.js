@@ -15,6 +15,7 @@ const db = mysql.createConnection({
 })
 
 app.post("/" , (req , res) => {
+     console.log(req.body)
     const sql = "INSERT INTO wydarzenia (Nazwa , Data , Opis ) VALUES ( ? , ? , ? )"
     const Nazwa = req.body.Nazwa;
     const Data = req.body.Data;
