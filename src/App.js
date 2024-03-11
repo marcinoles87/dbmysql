@@ -21,10 +21,16 @@ function App() {
   console.log(data)
 
   const handleDelete = (id , e) => {
+
     e.preventDefault()
 
-    axios.delete(`http://localhost:8081/wydarzenia/Nazwa`)
-    .then( res => console.log(res))
+   
+
+     const element =  axios.delete(`http://localhost:8081`)
+   
+ 
+
+   console.log(element)
    
 
     
