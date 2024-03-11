@@ -7,6 +7,10 @@ function App() {
 
   const [data , setData] = useState([]);
 
+  const [Nazwa , setNazwa] = useState('');
+  const [Opis , setOpis] = useState('');
+  const [Data , setDate ] = useState();
+
 
   useEffect( () => {
     axios.get('http://localhost:8081')
@@ -20,27 +24,26 @@ function App() {
  
   console.log(data)
 
-  const handleDelete = (id , e) => {
+  const handleAdd = (id , e) => {
 
     e.preventDefault()
 
-   
-
-     const element =  axios.delete(`http://localhost:8081`)
-   
- 
-
-   console.log(element)
-   
-
-    
-    
     // const newArray = data.filter((item) => item.Nazwa !== id)
-   
+    
+    // setData(newArray)
 
-  //  setData(newArray)
 
+    axios.post('http://localhost:8081/create' , 
 
+    {
+      Nazwa : Nazwa ,
+      Data : Data ,
+      Opis : Opis
+    }
+    
+    )
+
+    
     
     
     
@@ -57,7 +60,7 @@ function App() {
             <h1 className='item-name'>{item.Nazwa}</h1>
             <p  className='item-date'>{item.Data}</p>
             <p className='item-desc'>{item.Opis}</p>
-            <button onClick={(e) =>handleDelete(item.Nazwa , e)}>Delete</button>
+            <button onClick={(e) =>handleAdd(item.Nazwa , e)}>Delete</button>
         </div>
       )
      })}
