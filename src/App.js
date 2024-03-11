@@ -39,9 +39,10 @@ function App() {
       Nazwa : Nazwa ,
       Data : Data ,
       Opis : Opis
-    }
-    
-    )
+    })
+    .then( () => {
+      console.log('success')
+    })
 
     
     
