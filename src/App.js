@@ -44,9 +44,11 @@ function App() {
   }
 
   const handleDelete = (item) => {
+    
     console.log(item)
+    axios.delete(`http://localhost:8081/${item}`)
 
-    axios.delete('http://localhost:8081')
+    
   }
 
 
@@ -69,7 +71,7 @@ function App() {
             <h1 className='item-name'>{item.Nazwa}</h1>
             <p  className='item-date'>{item.Data}</p>
             <p className='item-desc'>{item.Opis}</p>
-            <button onClick={() => handleDelete(item)}>Usun</button>
+            <button onClick={() => handleDelete(item.Nazwa)}>Usun</button>
            
         </div>
       )
