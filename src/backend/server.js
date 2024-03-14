@@ -47,6 +47,14 @@ app.get('/' , (req , res) => {
 })
 
 
+app.delete('/' , (req , res) => {
+    const sql = "DELETE FROM wydarzenia WHERE Nazwa"
+    db.query(sql , ( err , data) => {
+
+    })
+})
+
+
 
 
 

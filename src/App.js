@@ -46,7 +46,7 @@ function App() {
   const handleDelete = (item) => {
     console.log(item)
 
-    axios.delete('http://localhost:8081?'+{item})
+    axios.delete('http://localhost:8081')
   }
 
 
