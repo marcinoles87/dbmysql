@@ -27,14 +27,7 @@ function App() {
   const handleAdd = () => {
 
      console.log(Nazwa)
-     
-
-
-
-    // const newArray = data.filter((item) => item.Nazwa !== id)
     
-    // setData(newArray)
-
 
     axios.post('http://localhost:8081' , 
 
@@ -50,6 +43,12 @@ function App() {
     
   }
 
+  const handleDelete = (item) => {
+    console.log(item)
+
+    axios.delete('http://localhost:8081?'+{item})
+  }
+
 
   console.log(Nazwa)
   console.log(Data)
@@ -61,6 +60,7 @@ function App() {
       <input type='text' placeholder='name' onChange={ (e) => setNazwa(e.target.value)}></input>
       <input type='date' placeholder='data' onChange={ (e) => setDate(e.target.value)}></input>
       <input type='text' placeholder='opis' onChange={ (e) => setOpis(e.target.value)}></input>
+      <button onClick={handleAdd}>Dodaj nowe wydarzenie</button>
       <h1>Dane pobrane z bazy danych  MYSQL </h1>
      {data.map( (item , index) =>{
       
@@ -69,7 +69,8 @@ function App() {
             <h1 className='item-name'>{item.Nazwa}</h1>
             <p  className='item-date'>{item.Data}</p>
             <p className='item-desc'>{item.Opis}</p>
-            <button onClick={handleAdd}>Delete</button>
+            <button onClick={() => handleDelete(item)}>Usun</button>
+           
         </div>
       )
      })}
