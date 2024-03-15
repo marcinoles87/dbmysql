@@ -49,6 +49,7 @@ app.get('/' , (req , res) => {
 
 app.delete('/' , (req , res) => {
      
+    res.send(`delete user ${req.params.id}`)
  const element = req.body.item
     console.log(element)
     console.log(res)
