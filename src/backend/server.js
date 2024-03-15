@@ -48,16 +48,12 @@ app.get('/' , (req , res) => {
 
 
 app.delete('/' , (req , res) => {
-    
-    
-    
-    console.log(req)
+     
+ const element = req.body.item
+    console.log(element)
     console.log(res)
    
 })
-
-
-
 
 
 app.listen(8081, () => {
