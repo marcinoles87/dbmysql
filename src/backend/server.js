@@ -56,6 +56,10 @@ app.delete('/' , (req , res) => {
    
 })
 
+app.get("/new" , (req , res) => {
+    res.send(`get `)
+})
+
 
 app.listen(8081, () => {
     console.log('listening')
