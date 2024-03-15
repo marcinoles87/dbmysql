@@ -47,14 +47,13 @@ app.get('/' , (req , res) => {
 })
 
 
-app.delete('/:nazwa' , (req , res) => {
-    const nazwa = req.body.item
+app.delete('/' , (req , res) => {
     
-    console.log(nazwa)
-    const sqlDelete = "SELECT Nazwa from wydarzenia WHERE Nazwa "
-    db.query(sqlDelete , nazwa, (err , result) => {
-        if(err)console.log(err)
-    })
+    
+    
+    console.log(req)
+    console.log(res)
+   
 })
 
 

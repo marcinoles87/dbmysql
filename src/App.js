@@ -47,7 +47,7 @@ function App() {
     
     
     const nazwa  = item.Nazwa
-    axios.delete(`http://localhost:8081`+nazwa)
+    axios.delete(`http://localhost:8081`)
     .then ( res => console.log(res))
 
    
