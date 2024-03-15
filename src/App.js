@@ -44,19 +44,8 @@ function App() {
   }
 
   const handleDelete = (item) => {
-    
-    
-    const nazwa  = item.Nazwa
-    axios.delete(`http://localhost:8081` ,
-    {item}
-    
-    )
-    
 
-   
-    
-    
-
+    axios.delete(`http://localhost:8081`  )
     
   }
 

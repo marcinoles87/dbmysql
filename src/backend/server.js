@@ -54,7 +54,7 @@ app.delete('/delete' , (req , res) => {
 })
 
 app.get("/new" , (req , res) => {
-    res.send(`get `)
+    res.send(`get ${req}`)
 })
 
 
