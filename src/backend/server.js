@@ -38,6 +38,7 @@ app.post("/" , (req , res) => {
 })
 
 app.get('/' , (req , res) => {
+    console.log(res)
     const sql = "SELECT * from wydarzenia"
     db.query(sql , ( err , data) => {
         if(err) return res.json(err);

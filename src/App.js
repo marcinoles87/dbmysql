@@ -50,6 +50,11 @@ function App() {
   }
 
 
+  const handleGetData = () => {
+    console.log('sucess')
+    axios.get('http://localhost:8081')
+  }
+
   console.log(Nazwa)
   console.log(Data)
   console.log(Opis)
@@ -62,6 +67,7 @@ function App() {
       <input type='text' placeholder='opis' onChange={ (e) => setOpis(e.target.value)}></input>
       <button onClick={handleAdd}>Dodaj nowe wydarzenie</button>
       <h1>Dane pobrane z bazy danych  MYSQL </h1>
+      <button onClick={handleGetData}>Show data BASE</button>
      {data.map( (item , index) =>{
       
       return(
