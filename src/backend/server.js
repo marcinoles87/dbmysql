@@ -47,15 +47,15 @@ app.get('/' , (req , res) => {
 })
 
 
-app.delete('/delete' , (req , res) => {
-     
-    res.send("sss")
+app.get('/new' , (req , res) => {
+
+    
+    res.send('sss')
+    console.log(req)
    
 })
 
-app.get("/new" , (req , res) => {
-    res.send(`get ${req}`)
-})
+
 
 
 app.listen(8081, () => {
