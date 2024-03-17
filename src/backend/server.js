@@ -34,9 +34,9 @@ app.post("/" , (req , res) => {
     )
 })
 
-app.delete("/delete" , (req , res) => {
+app.delete("/delete:Nazwa" , (req , res) => {
    
-   const sql = "DELETE FROM wydarzenia WHERE Nazwa = Nazwa"
+   const sql = "DELETE FROM wydarzenia WHERE Nazwa = :Nazwa"
    const Nazwa = req.body.Nazwa;
    const Data = req.body.Data;
    const Opis = req.body.Opis;
