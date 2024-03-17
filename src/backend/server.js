@@ -30,11 +30,28 @@ app.post("/" , (req , res) => {
                 res.send('values insered')
             }
 
-            
-
-
         }
     )
+})
+
+app.delete("/" , (req , res) => {
+    console.log(req.body)
+   const sql = "DELETE FROM wydarzenia (Nazwa , Data , Opis ) VALUES ( ? , ? , ? )"
+   const Nazwa = req.body.Nazwa;
+   const Data = req.body.Data;
+   const Opis = req.body.Opis;
+
+   db.query(sql , [Nazwa , Data , Opis] , 
+       (err , result) => {
+           console.log(result)
+           if(err) {
+               console.log('error')
+           }else{
+               res.send('values insered')
+           }
+
+       }
+   )
 })
 
 app.get('/' , (req , res) => {

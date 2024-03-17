@@ -45,12 +45,15 @@ function App() {
 
   const handleDelete = (item) => {
 
+    console.log(item)
+
+
     axios.delete(`http://localhost:8081` ,
     
     {
-      Nazwa : Nazwa ,
-      Data : Data ,
-      Opis : Opis
+      Nazwa : item.Nazwa ,
+      Data : item.Data ,
+      Opis : item.Opis
     } )
     
   }
