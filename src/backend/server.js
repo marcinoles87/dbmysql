@@ -52,7 +52,7 @@ app.get('/new' , (req , res) => {
 
     
     res.send('sss')
-    console.log(req)
+    console.log(res)
    
 })
 

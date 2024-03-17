@@ -45,19 +45,22 @@ function App() {
 
   const handleDelete = (item) => {
 
-    axios.delete(`http://localhost:8081`  )
+    axios.delete(`http://localhost:8081` ,
+    
+    {
+      Nazwa : Nazwa ,
+      Data : Data ,
+      Opis : Opis
+    } )
     
   }
 
 
   const handleGetData = () => {
     console.log('sucess')
-    axios.get('http://localhost:8081')
+    axios.get('http://localhost:8081/new')
   }
 
-  console.log(Nazwa)
-  console.log(Data)
-  console.log(Opis)
 
   return (
     <div className="App">
