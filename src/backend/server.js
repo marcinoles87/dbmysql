@@ -15,7 +15,7 @@ const db = mysql.createConnection({
 })
 
 app.post("/" , (req , res) => {
-     console.log(req.body)
+    
     const sql = "INSERT INTO wydarzenia (Nazwa , Data , Opis ) VALUES ( ? , ? , ? )"
     const Nazwa = req.body.Nazwa;
     const Data = req.body.Data;
@@ -34,14 +34,14 @@ app.post("/" , (req , res) => {
     )
 })
 
-app.delete("/" , (req , res) => {
-    console.log(req.body)
-   const sql = "DELETE FROM wydarzenia (Nazwa , Data , Opis ) VALUES ( ? , ? , ? )"
+app.delete("/delete" , (req , res) => {
+   
+   const sql = "DELETE FROM wydarzenia WHERE Nazwa = Nazwa"
    const Nazwa = req.body.Nazwa;
    const Data = req.body.Data;
    const Opis = req.body.Opis;
 
-   db.query(sql , [Nazwa , Data , Opis] , 
+   db.query(sql , [ {Nazwa , Data , Opis}] , 
        (err , result) => {
            console.log(result)
            if(err) {

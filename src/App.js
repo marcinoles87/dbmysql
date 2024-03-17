@@ -48,7 +48,7 @@ function App() {
     console.log(item)
 
 
-    axios.delete(`http://localhost:8081` ,
+    axios.delete(`http://localhost:8081/delete`  ,
     
     {
       Nazwa : item.Nazwa ,
