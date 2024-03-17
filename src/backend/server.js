@@ -43,7 +43,7 @@ app.delete("/delete" , (req , res) => {
 
    db.query(sql , [ {Nazwa , Data , Opis}] , 
        (err , result) => {
-           console.log(result)
+           
            if(err) {
                console.log('error')
            }else{
