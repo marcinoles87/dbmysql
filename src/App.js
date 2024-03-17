@@ -60,8 +60,9 @@ function App() {
 
 
   const handleGetData = () => {
-    console.log('sucess')
-    axios.get('http://localhost:8081/new')
+    window.location.href = window.location.href;
+    console.log('sucess get data')
+    axios.get('http://localhost:8081')
   }
 
 
