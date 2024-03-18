@@ -54,7 +54,7 @@ function App() {
       Nazwa : item.Nazwa ,
       Data : item.Data ,
       Opis : item.Opis
-    } )
+    } ).then( (err) => console.log(err))
     
   }
 
