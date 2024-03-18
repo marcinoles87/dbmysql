@@ -36,10 +36,12 @@ app.post("/" , (req , res) => {
 
 app.delete("/delete" , (req , res) => {
    
-   const sql = "DELETE FROM wydarzenia WHERE Nazwa = Nazwa"
+   const sql = "DELETE FROM wydarzenia WHERE Nazwa = '?'"
    const Nazwa = req.body.Nazwa;
    const Data = req.body.Data;
    const Opis = req.body.Opis;
+
+   console.log(Nazwa)
 
    db.query(sql , [ {Nazwa , Data , Opis}] , 
        (err , result) => {
@@ -55,7 +57,7 @@ app.delete("/delete" , (req , res) => {
 })
 
 app.get('/' , (req , res) => {
-    console.log(res)
+    
     const sql = "SELECT * from wydarzenia"
     db.query(sql , ( err , data) => {
         if(err) return res.json(err);
@@ -69,7 +71,7 @@ app.get('/new' , (req , res) => {
 
     
     res.send('sss')
-    console.log(res)
+   
    
 })
 
