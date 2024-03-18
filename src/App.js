@@ -49,11 +49,10 @@ function App() {
 
 
     axios.delete(`http://localhost:8081/delete`  ,
-    
-    {
+    { data : {
       Nazwa : item.Nazwa ,
       Data : item.Data ,
-      Opis : item.Opis
+      Opis : item.Opis }
     } )
 
     
