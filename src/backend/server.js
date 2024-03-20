@@ -38,24 +38,21 @@ app.delete("/delete" , (req , res) => {
 
     console.log(req.body)
    
-   const sql = "DELETE FROM wydarzenia WHERE Nazwa=? Data=? Opis=? "
+   const sql = "DELETE FROM wydarzenia WHERE Nazwa=? "
    const Nazwa = req.body.Nazwa;
-   const Data = req.body.Data;
-   const Opis = req.body.Opis;
-   
-   console.log(Nazwa)
 
-
-   db.query(sql , [ {Nazwa , Data , Opis }] , 
+   db.query(sql , [ {Nazwa} ] , 
        (err , result) => {
            
            if(err) {
-               console.log('error')
+               console.log(err)
            }else{
                res.send('succes')
            }
-
+            res.redirect('/')
        }
+
+       
    )
 })
 
