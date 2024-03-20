@@ -48,14 +48,13 @@ function App() {
     console.log(item)
 
 
-    axios.delete(`http://localhost:8081/delete`)
-    .then(response => console.log(response.data))
-    // { data : {
-    //   Nazwa : item.Nazwa ,
-    //   Data : item.Data ,
-    //   Opis : item.Opis }
-    // } )
-
+    axios.delete(`http://localhost:8081/delete` ,
+    
+    { data : {
+      Nazwa : item.Nazwa ,
+      Data : item.Data ,
+      Opis : item.Opis }
+    } ) 
     
   }
   

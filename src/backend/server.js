@@ -35,23 +35,24 @@ app.post("/" , (req , res) => {
 })
 
 app.delete("/delete" , (req , res) => {
+
+    console.log(req.body)
    
-   const sql = "DELETE FROM wydarzenia "
+   const sql = "DELETE FROM wydarzenia WHERE Nazwa=? Data=? Opis=? "
    const Nazwa = req.body.Nazwa;
    const Data = req.body.Data;
    const Opis = req.body.Opis;
+   
+   console.log(Nazwa)
 
-   console.log(Nazwa + 'nie wykryto')
-   console.log(req + 'req')
-   console.log(res + 'res')
 
-   db.query(sql , [ {Nazwa , Data , Opis}] , 
+   db.query(sql , [ {Nazwa , Data , Opis }] , 
        (err , result) => {
            
            if(err) {
                console.log('error')
            }else{
-               res.send('values insered')
+               res.send('succes')
            }
 
        }
