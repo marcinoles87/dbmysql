@@ -48,7 +48,7 @@ function App() {
     console.log(item)
 
 
-    axios.delete(`http://localhost:8081/delete` ,
+    axios.delete(`http://localhost:8081/delete/${item.Nazwa}` ,
     
     { data : {
       Nazwa : item.Nazwa ,
@@ -61,9 +61,9 @@ function App() {
 
 
   const handleGetData = () => {
-    window.location.href = window.location.href;
-    console.log('sucess get data')
-    axios.get('http://localhost:8081')
+    // window.location.href = window.location.href;
+    // console.log('sucess get data')
+    // axios.get('http://localhost:8081')
   }
 
 

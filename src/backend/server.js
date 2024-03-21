@@ -34,14 +34,14 @@ app.post("/" , (req , res) => {
     )
 })
 
-app.delete("/delete" , (req , res) => {
+app.delete("/delete/:Nazwa" , (req , res) => {
 
     console.log(req.body)
    
    const sql = "DELETE FROM wydarzenia WHERE Nazwa=? "
-   const Nazwa = req.body.Nazwa;
+   const Nazwa = req.params.Nazwa;
 
-   db.query(sql , [ {Nazwa} ] , 
+   db.query(sql , Nazwa , 
        (err , result) => {
            
            if(err) {
@@ -49,7 +49,7 @@ app.delete("/delete" , (req , res) => {
            }else{
                res.send('succes')
            }
-            res.redirect('/')
+            
        }
 
        
