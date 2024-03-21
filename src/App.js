@@ -70,9 +70,9 @@ function App() {
   return (
     <div className="App">
 
-      <input type='text' placeholder='name' onChange={ (e) => setNazwa(e.target.value)}></input>
-      <input type='date' placeholder='data' onChange={ (e) => setDate(e.target.value)}></input>
-      <input type='text' placeholder='opis' onChange={ (e) => setOpis(e.target.value)}></input>
+      <input type='text' placeholder='Name' onChange={ (e) => setNazwa(e.target.value)}></input>
+      <input type='date' placeholder='Data' onChange={ (e) => setDate(e.target.value)}></input>
+      <input type='text' placeholder='Opis' onChange={ (e) => setOpis(e.target.value)}></input>
       <button onClick={handleAdd}>Dodaj nowe wydarzenie</button>
       <h1>Dane pobrane z bazy danych  MYSQL </h1>
       <button onClick={handleGetData}>Show data BASE</button>
@@ -81,7 +81,7 @@ function App() {
       return(
         <div key={index} className='item-container'>
             <h1 className='item-name'>{item.Nazwa}</h1>
-            <p  className='item-date'>{item.Data}</p>
+            <p  className='item-date'>{item.Data.toString()}</p>
             <p className='item-desc'>{item.Opis}</p>
             <button onClick={() => handleDelete(item)}>Usun</button>
            
