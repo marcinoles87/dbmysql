@@ -9,20 +9,19 @@
 }
 
 .item-container h1{
-    min-width: 60vw;
     text-align: center;
     background-color: rgb(132, 215, 176);
 }
 
 .item-name{
-    width: 40vw;
+    width: 100%;
 }
 
 .App{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 

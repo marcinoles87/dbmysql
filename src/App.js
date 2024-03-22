@@ -15,14 +15,14 @@ function App() {
   useEffect( () => {
     axios.get('http://localhost:8081')
     
-    .then( res => setData(res.data))
+    .then( res => {
+      setData(res.data)
+    } )
     
     
     .catch( err => console.log(err))
   },[])
 
- 
-  console.log(data)
 
   const handleAdd = () => {
 
@@ -81,7 +81,7 @@ function App() {
       return(
         <div key={index} className='item-container'>
             <h1 className='item-name'>{item.Nazwa}</h1>
-            <p  className='item-date'>{item.Data.toString()}</p>
+            <p  className='item-date'>{item.Data}</p>
             <p className='item-desc'>{item.Opis}</p>
             <button onClick={() => handleDelete(item)}>Usun</button>
            
