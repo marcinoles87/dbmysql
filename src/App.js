@@ -13,6 +13,8 @@ function App() {
   const [Nip , setNip ] = useState();
   const [Data , setDate ] = useState();
 
+  console.log(Adres)
+
 
   useEffect( () => {
     axios.get('http://localhost:8081')
@@ -81,7 +83,7 @@ function App() {
       <input type='text' placeholder='Nip' onChange={ (e) => setNip(e.target.value)}></input>
       <input type='date' placeholder='Data' onChange={ (e) => setDate(e.target.value)}></input>
       <input type='text' placeholder='Opis Faktury' onChange={ (e) => setOpis(e.target.value)}></input>
-      <button onClick={handleAdd}>Dodaj nowe wydarzenie</button>
+      <button onClick={handleAdd}>Dodaj nowe Dane do faktury</button>
       <h1>Dane pobrane z bazy danych  MYSQL </h1>
       <button onClick={handleGetData}>Show data BASE</button>
      {data.map( (item , index) =>{

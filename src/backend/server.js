@@ -16,12 +16,14 @@ const db = mysql.createConnection({
 
 app.post("/" , (req , res) => {
     
-    const sql = "INSERT INTO wydarzenia (Nazwa , Data , Opis ) VALUES ( ? , ? , ? )"
+    const sql = "INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip ) VALUES ( ? , ? , ? , ? , ? )"
     const Nazwa = req.body.Nazwa;
     const Data = req.body.Data;
     const Opis = req.body.Opis;
+    const Nip = req.body.Nip;
+    const Adres = req.body.Adres;
 
-    db.query(sql , [Nazwa , Data , Opis] , 
+    db.query(sql , [Nazwa , Data , Opis, Adres , Nip ] , 
         (err , result) => {
             console.log(result)
             if(err) {
@@ -66,14 +68,6 @@ app.get('/' , (req , res) => {
     })
 })
 
-
-app.get('/new' , (req , res) => {
-
-    
-    res.send('sss')
-   
-   
-})
 
 
 
