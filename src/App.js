@@ -9,6 +9,8 @@ function App() {
 
   const [Nazwa , setNazwa] = useState('');
   const [Opis , setOpis] = useState('');
+  const [Adres , setAdres ] = useState();
+  const [Nip , setNip ] = useState();
   const [Data , setDate ] = useState();
 
 
@@ -34,7 +36,9 @@ function App() {
     {
       Nazwa : Nazwa ,
       Data : Data ,
-      Opis : Opis
+      Opis : Opis ,
+      Adres : Adres ,
+      Nip : Nip ,
     })
     .then( () => {
       console.log('success')
@@ -53,7 +57,9 @@ function App() {
     { data : {
       Nazwa : item.Nazwa ,
       Data : item.Data ,
-      Opis : item.Opis }
+      Opis : item.Opis ,
+      Adres : item.Adres ,
+      Nip : item.Nip , }
     } ) 
     
   }
@@ -61,18 +67,20 @@ function App() {
 
 
   const handleGetData = () => {
-    // window.location.href = window.location.href;
-    // console.log('sucess get data')
-    // axios.get('http://localhost:8081')
+    window.location.href = window.location.href;
+    console.log('sucess get data')
+    axios.get('http://localhost:8081')
   }
 
 
   return (
     <div className="App">
 
-      <input type='text' placeholder='Name' onChange={ (e) => setNazwa(e.target.value)}></input>
+      <input type='text' placeholder='Nazwa Firmy' onChange={ (e) => setNazwa(e.target.value)}></input>
+      <input type='text' placeholder='Adres Firmy' onChange={ (e) => setAdres(e.target.value)}></input>
+      <input type='text' placeholder='Nip' onChange={ (e) => setNip(e.target.value)}></input>
       <input type='date' placeholder='Data' onChange={ (e) => setDate(e.target.value)}></input>
-      <input type='text' placeholder='Opis' onChange={ (e) => setOpis(e.target.value)}></input>
+      <input type='text' placeholder='Opis Faktury' onChange={ (e) => setOpis(e.target.value)}></input>
       <button onClick={handleAdd}>Dodaj nowe wydarzenie</button>
       <h1>Dane pobrane z bazy danych  MYSQL </h1>
       <button onClick={handleGetData}>Show data BASE</button>
@@ -81,6 +89,8 @@ function App() {
       return(
         <div key={index} className='item-container'>
             <h1 className='item-name'>{item.Nazwa}</h1>
+            <p  className='item-adres'>{item.Adres}</p>
+            <p  className='item-nip'>{item.Nip}</p>
             <p  className='item-date'>{item.Data}</p>
             <p className='item-desc'>{item.Opis}</p>
             <button onClick={() => handleDelete(item)}>Usun</button>
