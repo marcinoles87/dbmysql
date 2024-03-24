@@ -1,10 +1,10 @@
 .item-container{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     font-size: 20px;
-    width: 35%;
+    width: 100%;
     
 }
 
@@ -15,6 +15,16 @@
 
 .item-name{
     width: 100%;
+}
+
+.item-sell{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+p{
+    margin: 5px;
 }
 
 .App{

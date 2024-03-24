@@ -89,15 +89,45 @@ function App() {
      {data.map( (item , index) =>{
       
       return(
+
         <div key={index} className='item-container'>
-            <h1 className='item-name'>{item.Nazwa}</h1>
-            <p  className='item-adres'>{item.Adres}</p>
-            <p  className='item-nip'>{item.Nip}</p>
-            <p  className='item-date'>{item.Data}</p>
-            <p className='item-desc'>{item.Opis}</p>
+          <>
+
+          <div className='faktura-dane'>
+            <p>Faktura numer : 6/2024</p>
+            <p>Data wystawienia : 25.03.2024 </p>
+            <p>Data sprzedaży : 26.03.2024</p>
+            <p>Płatnośc : Przelew</p>
+
+          </div>
+
+        <div className='item-sell'>
+      <h3>Sprzedawca:</h3>
+            <p className='item-name'>Nazwa : Grażyna Oleś Usługi porządkowe</p>
+            <p  className='item-adres'>Adres : Osiedle na Wzgórzach 15/7</p>
+            <p  className='item-nip'>Nip : 677-100-283</p>
+            <p  className='item-date'>Data : 22-03-2024</p>
+            <p className='item-desc'>Opis : Usługa porządkowa</p>
             <button onClick={() => handleDelete(item)}>Usun</button>
            
         </div>
+
+
+        <div className='item-sell'>
+           <h3>Nabywca:</h3>
+            <p className='item-name'>Nazwa :{item.Nazwa}</p>
+            <p  className='item-adres'>Adres : {item.Adres}</p>
+            <p  className='item-nip'>Nip :{item.Nip}</p>
+            <p  className='item-date'>Data :{item.Data}</p>
+            <p className='item-desc'>Opis :{item.Opis}</p>
+            <button onClick={() => handleDelete(item)}>Usun</button>
+        </div>
+         
+           
+           </>
+        </div>
+
+        
       )
      })}
     </div>
