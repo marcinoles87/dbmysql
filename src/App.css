@@ -18,13 +18,13 @@
     width: 100%;
 }
 
-.item-sell{
+.item_sell{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.faktura-dane{
+.faktura_dane{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -47,4 +47,36 @@ input{
     margin: 10px;
     min-width: 200px;
     padding: 10px;
+}
+
+
+/* table faktury*/
+
+.faktura_pozycja{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.faktura_pozycja table tr td{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.faktura_podsumowanie{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: right;
+    margin-right: 100px;
+}
+
+.faktura_podsumowanie p{
+    margin: 10px;
+}
+
+.faktura_do_zaplaty{
+    display: flex;
+    align-items: center;
 }
