@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/databaseconnect/static/css/main.c43ac907.css",
+    "main.js": "/databaseconnect/static/js/main.4ecae60b.js",
+    "index.html": "/databaseconnect/index.html",
+    "main.c43ac907.css.map": "/databaseconnect/static/css/main.c43ac907.css.map",
+    "main.4ecae60b.js.map": "/databaseconnect/static/js/main.4ecae60b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c43ac907.css",
+    "static/js/main.4ecae60b.js"
+  ]
+}
