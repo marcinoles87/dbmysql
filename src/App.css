@@ -78,5 +78,15 @@ input{
 
 .faktura_do_zaplaty{
     display: flex;
+    margin-left: 100px;
     align-items: center;
+    width: 100%;
+}
+
+.faktura_podpis{
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    gap: 40%;
+    justify-content: space-evenly;
 }

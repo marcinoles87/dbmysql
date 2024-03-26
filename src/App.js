@@ -105,11 +105,11 @@ function App() {
 
         <div className='item_sell'>
       <h3>Sprzedawca:</h3>
-            <p className='item-name'>Nazwa : Grażyna Oleś Usługi porządkowe</p>
-            <p  className='item-adres'>Adres : Osiedle na Wzgórzach 15/7</p>
-            <p  className='item-nip'>Nip : 677-100-283</p>
-            <p className='item-desc'>Opis : Usługa porządkowa</p>
-            <button onClick={() => handleDelete(item)}>Usun</button>
+            <p className='item-name'>Nazwa : Usługi Porządkowe Grażyna Oleś</p>
+            <p  className='item-adres'>Adres : Osiedle na Wzgórzach 15/7 31-722 Kraków</p>
+            <p  className='item-nip'>Nip : 678 189 38 51 REGON 357168823</p>
+            {/* <p className='item-desc'>Opis : Usługa porządkowa</p> */}
+            {/* <button onClick={() => handleDelete(item)}>Usun</button> */}
            
         </div>
 
@@ -118,10 +118,15 @@ function App() {
            <h3>Nabywca:</h3>
             <p className='item-name'>Nazwa :{item.Nazwa}</p>
             <p  className='item-adres'>Adres : {item.Adres}</p>
-            <p  className='item-nip'>Nip :{item.Nip}</p>
+            <p> 31-004 Kraków</p>
+            <p  className='item-nip'>Nip : 676 101 37 17</p>
+            <p className='item-desc'>Jednostka odbierająca :</p> 
+            <p>Samorządowe Przedszkole nr 111 os.Na Stoku 21</p>
+            <p>31-704 Kraków</p>
             {/* <p  className='item-date'>Data :{item.Data}</p> */}
-            <p className='item-desc'>Opis :{item.Opis}</p>
-            <button onClick={() => handleDelete(item)}>Usun</button>
+            {/* <p className='item-desc'>Opis :{item.Opis}</p> */}
+            
+            {/* <button onClick={() => handleDelete(item)}>Usun</button> */}
         </div>
 
         <div className='faktura_pozycja'>
@@ -142,26 +147,37 @@ function App() {
                 <td>1</td>
                 <td>Dezynfekcja i sprzątanie pomieszczeń po wszawicy</td>
                 <td>1</td>
-                <td>1000</td>
-                <td>1230</td>
-                <td>1000</td>
+                <td>1000,00</td>
+                <td>1230,00</td>
+                <td>1000,00</td>
                 <td>23</td>
-                <td>230</td>
-                <td>1230</td>
+                <td>230,00</td>
+                <td>1230,00</td>
                 </tr>
 </table>
         </div>
 
         <div className='faktura_podsumowanie'>
-          <p> <b>Wartość netto :</b>  1000 PLN</p>
-          <p> <b>Wartość VAT :</b>  230 PLN</p>
-          <p> <b>Wartość brutto :</b>  1230 PLN</p>
+          <p> <b>Wartość netto :</b>  1000,00 PLN</p>
+          <p> <b>Wartość VAT :</b>  230,00 PLN</p>
+          <p> <b>Wartość brutto :</b>  1230,00 PLN</p>
          
         </div>
 
         <div className='faktura_do_zaplaty'>
-          <h3>Do zapłaty </h3>
-          <p> 1230 PLN tysiąc dwieście trzydzieści PLN </p>
+          <h3>Do zapłaty : </h3>
+          <p> 1230 PLN </p>
+           
+        </div>
+
+        <div className='faktura_do_zaplaty'>
+         
+           <p>Słownie: tysiąc dwieście trzydzieści PLN </p>
+        </div>
+
+        <div className='faktura_podpis'>
+          <h4>Imie i Nazwisko odbiorcy</h4>
+          <h4>Imie i Nazwisko wystawcy</h4>
         </div>
          
            
