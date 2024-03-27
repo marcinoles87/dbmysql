@@ -105,9 +105,9 @@ function App() {
 
         <div className='item_sell'>
       <h3>Sprzedawca:</h3>
-            <p className='item-name'>Nazwa : Usługi Porządkowe Grażyna Oleś</p>
-            <p  className='item-adres'>Adres : Osiedle na Wzgórzach 15/7 31-722 Kraków</p>
-            <p  className='item-nip'>Nip : 678 189 38 51 REGON 357168823</p>
+            <p className='item-name'>Nazwa : Usługi Porządkowe</p>
+            <p  className='item-adres'>Adres : Kraków</p>
+            <p  className='item-nip'>Nip : 100-100-100-234</p>
             {/* <p className='item-desc'>Opis : Usługa porządkowa</p> */}
             {/* <button onClick={() => handleDelete(item)}>Usun</button> */}
            
