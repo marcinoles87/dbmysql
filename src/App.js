@@ -63,6 +63,7 @@ function App() {
     axios.delete(`http://localhost:8081/delete/${item.Nazwa}` ,
     
     { data : {
+      DataSprzedazy : dataNow,
       Nazwa : item.Nazwa ,
       Data : item.Data ,
       Opis : item.Opis ,
@@ -103,8 +104,8 @@ function App() {
 
           <div className='faktura_dane'>
             <p>Faktura numer : 6/2024</p>
-            <p>Data wystawienia :  </p>
-            <p>Data sprzedaży : </p>
+            <p>Data wystawienia : {item.DataSprzedazy} </p>
+            <p>Data sprzedaży : {item.DataSprzedazy}</p>
             <p>Płatnośc : Przelew</p>
 
           </div>
@@ -132,7 +133,7 @@ function App() {
             {/* <p  className='item-date'>Data :{item.Data}</p> */}
             {/* <p className='item-desc'>Opis :{item.Opis}</p> */}
             
-            {/* <button onClick={() => handleDelete(item)}>Usun</button> */}
+            <button onClick={() => handleDelete(item)}>Usun</button>
         </div>
 
         <div className='faktura_pozycja'>
