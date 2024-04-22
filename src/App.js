@@ -16,6 +16,9 @@ function App() {
 
   
 
+  const dataNow = new Date();
+  const dataNew = `${dataNow.getDay()}.${dataNow.getMonth()}.${dataNow.getFullYear()}`
+  console.log(dataNew)
 
 
   useEffect( () => {
@@ -38,6 +41,7 @@ function App() {
     axios.post('http://localhost:8081' , 
 
     {
+      DataSprzedazy : dataNow,
       Nazwa : Nazwa ,
       Data : Data ,
       Opis : Opis ,
@@ -99,8 +103,8 @@ function App() {
 
           <div className='faktura_dane'>
             <p>Faktura numer : 6/2024</p>
-            <p>Data wystawienia : 25.03.2024 </p>
-            <p>Data sprzedaży : 26.03.2024</p>
+            <p>Data wystawienia :  </p>
+            <p>Data sprzedaży : </p>
             <p>Płatnośc : Przelew</p>
 
           </div>
