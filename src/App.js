@@ -10,16 +10,16 @@ function App() {
 
   const [Nazwa , setNazwa] = useState('');
   const [Opis , setOpis] = useState('');
-  const [Adres , setAdres ] = useState();
-  const [Nip , setNip ] = useState();
-  const [Data , setDate ] = useState();
+  const [Adres , setAdres ] = useState('');
+  const [Nip , setNip ] = useState('');
+  const [Data , setDate ] = useState('');
   const [Cena , setCena ] = useState();
 
   
 
   const dataNow = new Date();
   const dataNew = `${dataNow.getDay()}.${dataNow.getMonth()}.${dataNow.getFullYear()}`
-  console.log(dataNew)
+ 
 
 
   useEffect( () => {
@@ -36,18 +36,18 @@ function App() {
 
   const handleAdd = () => {
 
-     console.log(Nazwa)
+     console.log(data)
     
 
-    axios.post('http://localhost:8081' , 
+    axios.post('http://localhost:8081/' , 
 
     {
-      DataSprzedazy : dataNow,
+      // DataSprzedazy : dataNow,
       Nazwa : Nazwa ,
       Data : Data ,
       Opis : Opis ,
-      Adres : Adres ,
       Nip : Nip ,
+      Adres : Adres ,
       Cena : Cena ,
     })
     .then( () => {
