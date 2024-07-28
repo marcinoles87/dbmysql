@@ -13,6 +13,7 @@ function App() {
   const [Adres , setAdres ] = useState();
   const [Nip , setNip ] = useState();
   const [Data , setDate ] = useState();
+  const [Cena , setCena ] = useState();
 
   
 
@@ -47,6 +48,7 @@ function App() {
       Opis : Opis ,
       Adres : Adres ,
       Nip : Nip ,
+      Cena : Cena ,
     })
     .then( () => {
       console.log('success')
@@ -68,7 +70,9 @@ function App() {
       Data : item.Data ,
       Opis : item.Opis ,
       Adres : item.Adres ,
-      Nip : item.Nip , }
+      Nip : item.Nip ,
+      Cena : item.Cena
+     }
     } ) 
     
   }
@@ -89,6 +93,7 @@ function App() {
       <input type='text' placeholder='Adres Firmy' onChange={ (e) => setAdres(e.target.value)}></input>
       <input type='text' placeholder='Nip' onChange={ (e) => setNip(e.target.value)}></input>
       <input type='date' placeholder='Data' onChange={ (e) => setDate(e.target.value)}></input>
+      <input type='number' placeholder='kwota' onChange={ (e) => setCena(e.target.value)}></input>
       <input type='text' placeholder='Opis Faktury' onChange={ (e) => setOpis(e.target.value)}></input>
       <button onClick={handleAdd}>Dodaj nowe Dane do faktury</button>
       <h1>Dane pobrane z bazy danych  MYSQL </h1>
@@ -126,10 +131,10 @@ function App() {
             <p className='item-name'>Nazwa :{item.Nazwa}</p>
             <p  className='item-adres'>Adres : {item.Adres}</p>
             <p> 31-004 Kraków</p>
-            <p  className='item-nip'>Nip : 676 101 37 17</p>
-            <p className='item-desc'>Jednostka odbierająca :</p> 
-            <p>Samorządowe Przedszkole nr 111 os.Na Stoku 21</p>
-            <p>31-704 Kraków</p>
+            <p  className='item-nip'>Nip : {item.Nip}</p>
+            <p className='item-desc'></p> 
+            <p>{item.Adres}</p>
+            
             {/* <p  className='item-date'>Data :{item.Data}</p> */}
             {/* <p className='item-desc'>Opis :{item.Opis}</p> */}
             
@@ -152,34 +157,34 @@ function App() {
 
                 <tr>
                 <td>1</td>
-                <td>Dezynfekcja i sprzątanie pomieszczeń po wszawicy</td>
+                <td>{item.Opis}</td>
                 <td>1</td>
-                <td>1000,00</td>
-                <td>1230,00</td>
-                <td>1000,00</td>
+                <td>{item.Cena}</td>
+                <td>-</td>
+                <td>{item.Cena}</td>
                 <td>23</td>
-                <td>230,00</td>
-                <td>1230,00</td>
+                <td>-</td>
+                <td>{item.Cena}</td>
                 </tr>
 </table>
         </div>
 
         <div className='faktura_podsumowanie'>
-          <p> <b>Wartość netto :</b>  1000,00 PLN</p>
-          <p> <b>Wartość VAT :</b>  230,00 PLN</p>
-          <p> <b>Wartość brutto :</b>  1230,00 PLN</p>
+          <p> <b>Wartość netto :</b>  {item.Cena} PLN</p>
+          <p> <b>Wartość VAT :</b>  - PLN</p>
+          <p> <b>Wartość brutto :</b>  {item.Cena} PLN</p>
          
         </div>
 
         <div className='faktura_do_zaplaty'>
           <h3>Do zapłaty : </h3>
-          <p> 1230 PLN </p>
+          <p> {item.Cena} PLN </p>
            
         </div>
 
         <div className='faktura_do_zaplaty'>
          
-           <p>Słownie: tysiąc dwieście trzydzieści PLN </p>
+           <p>Słownie: {item.Cena} PLN </p>
         </div>
 
         <div className='faktura_podpis'>
