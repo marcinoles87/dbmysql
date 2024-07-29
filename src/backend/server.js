@@ -29,7 +29,7 @@ app.post("/" , (req , res) => {
     
   
 
-    db.query('INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena) VALUES ( ? , ? , ? , ? , ?  )' , [Nazwa,Data,Opis,Adres,Nip,Cena] , 
+    db.query('INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena) VALUES ( ? , ? , ? , ? , ? , ?  )' , [Nazwa,Data,Opis,Adres,Nip,Cena] , 
         (err , result) => {
             console.log(result)
             if(err) {
