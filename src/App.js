@@ -52,7 +52,7 @@ function App() {
       Cena : Cena ,
     })
     .then( () => {
-      console.log('success')
+      console.log('success add item do database')
     })
   
     

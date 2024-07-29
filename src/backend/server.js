@@ -18,12 +18,12 @@ app.post("/" , (req , res) => {
 
     console.log(req.body)
     
-    const sql = "INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena ) VALUES ( ? , ? , ? , ? , ? , ?)"
+    const sql = "INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena ) VALUES ( ? , ? , ? , ? , ? , ? )"
     const Nazwa = req.body.Nazwa;
     const Data = req.body.Data;
     const Opis = req.body.Opis;
-    const Nip = req.body.Nip;
     const Adres = req.body.Adres;
+    const Nip = req.body.Nip;
     const Cena = req.body.Cena;
     
     
