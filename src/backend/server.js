@@ -24,7 +24,7 @@ app.post("/" , (req , res) => {
     const Opis = req.body.Opis;
     const Adres = req.body.Adres;
     const Nip = req.body.Nip;
-    const Cena = req.body.Cena;
+    // const Cena = req.body.Cena;
     
     
   
