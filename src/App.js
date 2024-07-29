@@ -13,7 +13,7 @@ function App() {
   const [Adres , setAdres ] = useState('');
   const [Nip , setNip ] = useState('');
   const [Data , setDate ] = useState('');
-  const [Cena , setCena ] = useState();
+  const [Cena , setCena ] = useState('');
 
   
 
