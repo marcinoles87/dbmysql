@@ -16,6 +16,8 @@ function App() {
   const [Cena , setCena ] = useState('');
 
   
+  console.log(Cena)
+  console.log(Nazwa)
 
   const dataNow = new Date();
   const dataNew = `${dataNow.getDay()}.${dataNow.getMonth()}.${dataNow.getFullYear()}`
@@ -94,7 +96,7 @@ function App() {
       <input type='text' placeholder='Adres Firmy' onChange={ (e) => setAdres(e.target.value)}></input>
       <input type='text' placeholder='Nip' onChange={ (e) => setNip(e.target.value)}></input>
       <input type='date' placeholder='Data' onChange={ (e) => setDate(e.target.value)}></input>
-      <input type='number' placeholder='kwota' onChange={ (e) => setCena(e.target.value)}></input>
+      <input type='text' placeholder='kwota' onChange={ (e) => setCena(e.target.value)}></input>
       <input type='text' placeholder='Opis Faktury' onChange={ (e) => setOpis(e.target.value)}></input>
       <button onClick={handleAdd}>Dodaj nowe Dane do faktury</button>
       <h1>Dane pobrane z bazy danych  MYSQL </h1>
@@ -102,6 +104,8 @@ function App() {
     
     
      {data.map( (item , index) =>{
+
+      
       
       return(
 
