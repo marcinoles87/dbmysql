@@ -24,12 +24,13 @@ app.post("/" , (req , res) => {
     const Opis = req.body.Opis;
     const Adres = req.body.Adres;
     const Nip = req.body.Nip;
+    const Cena = req.body.Cena;
    
     
     
   
 
-    db.query('INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip) VALUES ( ? , ? , ? , ? , ?)' , [Nazwa,Data,Opis,Adres,Nip] , 
+    db.query('INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena) VALUES ( ? , ? , ? , ? , ? , ?)' , [Nazwa,Data,Opis,Adres,Nip,Cena] , 
         (err , result) => {
             console.log(result)
             if(err) {
