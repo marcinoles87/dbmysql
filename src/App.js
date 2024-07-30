@@ -15,9 +15,7 @@ function App() {
   const [Data , setDate ] = useState('');
   const [Cena , setCena ] = useState('');
 
-  
-  console.log(Cena)
-  console.log(Nazwa)
+
 
   const dataNow = new Date();
   const dataNew = `${dataNow.getDay()}.${dataNow.getMonth()}.${dataNow.getFullYear()}`

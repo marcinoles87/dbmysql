@@ -18,7 +18,7 @@ app.post("/" , (req , res) => {
 
     console.log(req.body.Nazwa)
     
-    const sql = "INSERT INTO 'wydarzenia' (Nazwa , Data , Opis , Adres , Nip ) VALUES ( ? , ? , ? , ? , ? )"
+    const sql = "INSERT INTO 'wydarzenia' (Nazwa , Data , Opis , Adres , Nip , Cena) VALUES ( ? , ? , ? , ? , ? , ? )"
     const Nazwa = req.body.Nazwa;
     const Data = req.body.Data;
     const Opis = req.body.Opis;
