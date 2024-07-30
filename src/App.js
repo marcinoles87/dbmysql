@@ -35,13 +35,10 @@ function App() {
 
 
   const handleAdd = () => {
-    
-
-     console.log(data)
-    
-
+    console.log(Cena)
     axios.post('http://localhost:8081/' , 
 
+      
     {
       // DataSprzedazy : dataNow,
       Nazwa : Nazwa ,

@@ -16,21 +16,17 @@ const db = mysql.createConnection({
 
 app.post("/" , (req , res) => {
 
-    console.log(req.body.Nazwa)
+    console.log(req)
     
-    const sql = "INSERT INTO 'wydarzenia' (Nazwa , Data , Opis , Adres , Nip , Cena) VALUES ( ? , ? , ? , ? , ? , ? )"
+    const sql = "INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena) VALUES ( ? , ? , ? , ? , ? , ? )"
     const Nazwa = req.body.Nazwa;
     const Data = req.body.Data;
     const Opis = req.body.Opis;
     const Adres = req.body.Adres;
     const Nip = req.body.Nip;
     const Cena = req.body.Cena;
-   
-    
-    
-  
 
-    db.query('INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena) VALUES ( ? , ? , ? , ? , ? , ?)' , [Nazwa,Data,Opis,Adres,Nip,Cena] , 
+    db.query("INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena) VALUES ( ? , ? , ? , ? , ? , ? )" , [Nazwa,Data,Opis,Adres,Nip,Cena] , 
         (err , result) => {
             console.log(result)
             if(err) {
