@@ -26,7 +26,7 @@ app.post("/" , (req , res) => {
     const Nip = req.body.Nip;
     const Cena = req.body.Cena;
 
-    db.query("INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip ) VALUES ( ? , ? , ? , ? , ? , ?  )" , [Nazwa,Data,Opis,Adres,Nip,Cena] , 
+    db.query("INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena ) VALUES ( ? , ? , ? , ? , ? , ?  )" , [Nazwa,Data,Opis,Adres,Nip,Cena] , 
         (err , result) => {
             console.log(result)
             if(err) {
