@@ -74,7 +74,7 @@ function App() {
       Opis : item.Opis ,
       Adres : item.Adres ,
       Nip : item.Nip ,
-      Cena : item.Cena
+      
      }
     } ) 
     
