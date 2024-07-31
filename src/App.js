@@ -40,7 +40,7 @@ function App() {
 
       
     {
-      // DataSprzedazy : dataNow,
+      DataSprzedazy : dataNow,
       Nazwa : Nazwa ,
       Data : Data ,
       Opis : Opis ,
@@ -82,6 +82,7 @@ function App() {
     window.location.href = window.location.href;
     console.log('sucess get data')
     axios.get('http://localhost:8081')
+    console.log(Cena)
   }
 
 

@@ -18,7 +18,8 @@ app.post("/" , (req , res) => {
 
     console.log(req.body.Cena)
     
-    const sql = "INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena) VALUES ( ? , ? , ? , ? , ? , ? )"
+    const sql = "INSERT INTO wydarzenia (DataSprzedazy , Nazwa , Data , Opis , Adres , Nip , Cena) VALUES ( ? , ? , ? , ? , ? , ? , ? )"
+    const DataSprzedazy = req.body.DataSprzedazy
     const Nazwa = req.body.Nazwa;
     const Data = req.body.Data;
     const Opis = req.body.Opis;
@@ -26,7 +27,7 @@ app.post("/" , (req , res) => {
     const Nip = req.body.Nip;
     const Cena = req.body.Cena;
 
-    db.query("INSERT INTO wydarzenia (Nazwa , Data , Opis , Adres , Nip , Cena ) VALUES ( ? , ? , ? , ? , ? , ?  )" , [Nazwa,Data,Opis,Adres,Nip,Cena] , 
+    db.query("INSERT INTO wydarzenia (DataSprzedazy , Nazwa , Data , Opis , Adres , Nip , Cena ) VALUES ( ? , ? , ? , ? , ? , ? , ?  )" , [DataSprzedazy,Nazwa,Data,Opis,Adres,Nip,Cena] , 
         (err , result) => {
             console.log(result)
             if(err) {
